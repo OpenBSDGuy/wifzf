@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+"""Run wifzf straight from a source checkout."""
+import sys
+
+from wifzf.cli import main
+
+sys.exit(main())

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wifzf"
+version = "0.1.0"
+description = "A minimal WiFi manager for FreeBSD built on top of wpa_supplicant and fzf"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Kasra Madadipouya", email = "kasra@madadipouya.com" }]
+keywords = ["freebsd", "wifi", "wpa_supplicant", "fzf", "tui", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: POSIX :: BSD :: FreeBSD",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking",
+]
+dynamic = ["dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/kasramp/wifzf"
+Repository = "https://github.com/kasramp/wifzf"
+Issues = "https://github.com/kasramp/wifzf/issues"
+
+[project.scripts]
+wifzf = "wifzf.cli:main"
+
+[tool.setuptools]
+packages = ["wifzf"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
