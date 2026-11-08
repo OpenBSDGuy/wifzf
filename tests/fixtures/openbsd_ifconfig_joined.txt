@@ -1,0 +1,8 @@
+iwm0: flags=808843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST,AUTOCONF4> mtu 1500
+	lladdr 02:00:00:00:00:00
+	index 1 priority 4 llprio 3
+	groups: wlan egress
+	media: IEEE802.11 autoselect (HT-MCS0 mode 11n)
+	status: active
+	ieee80211: join Vodafone-993D chan 6 bssid 02:00:00:00:00:01 59% wpakey wpaprotos wpa2 wpaakms psk,sha256-psk wpaciphers ccmp wpagroupcipher ccmp
+	inet 192.168.0.209 netmask 0xffffff00 broadcast 192.168.0.255

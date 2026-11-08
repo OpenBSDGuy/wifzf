@@ -1,0 +1,38 @@
+iwm0: flags=808843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST,AUTOCONF4> mtu 1500
+	lladdr 02:00:00:00:00:00
+	index 1 priority 4 llprio 3
+	groups: wlan egress
+	media: IEEE802.11 autoselect (HT-MCS0 mode 11n)
+	status: active
+	ieee80211: join Vodafone-993D chan 6 bssid 02:00:00:00:00:01 59% wpakey wpaprotos wpa2 wpaakms psk,sha256-psk wpaciphers ccmp wpagroupcipher ccmp
+		nwid WLAN-8C3ZRD chan 1 bssid 02:00:00:00:00:02 65% HT-MCS23 privacy,short_slottime,wpa2 
+		nwid "" chan 48 bssid 02:00:00:00:00:03 65% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid MagentaWLAN-W8JI chan 48 bssid 02:00:00:00:00:04 65% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa3,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:05 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid WLAN-618826 chan 36 bssid 02:00:00:00:00:06 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:07 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid WLAN-618826 chan 11 bssid 02:00:00:00:00:08 62% HT-MCS31 privacy,short_preamble,short_slottime,radio_measurement,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:09 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:0a 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:0b 62% HT-MCS31 privacy,short_slottime,radio_measurement,wpa2 
+		nwid "Vodafone Hotspot" chan 11 bssid 02:00:00:00:00:0c 59% HT-MCS15 short_preamble,short_slottime,radio_measurement 
+		nwid MagentaWLAN-W8JI chan 6 bssid 02:00:00:00:00:0d 59% HT-MCS31 privacy,spectrum_mgmt,short_slottime,radio_measurement,wpa3,wpa2 
+		nwid "Vodafone Homespot" chan 11 bssid 02:00:00:00:00:0e 59% HT-MCS15 short_preamble,short_slottime,radio_measurement 
+		nwid Vodafone-993D chan 6 bssid 02:00:00:00:00:01 59% 450M HT privacy,short_preamble,short_slottime,wpa2 
+		nwid "Fancy Bear" chan 11 bssid 02:00:00:00:00:0f 56% HT-MCS15 privacy,short_preamble,short_slottime,radio_measurement,wpa2 
+		nwid WLAN-8C3ZRD chan 104 bssid 02:00:00:00:00:10 53% HT-MCS31 privacy,spectrum_mgmt,wpa2 
+		nwid Vodafone-993D-8 chan 6 bssid 02:00:00:00:00:11 52% 450M HT privacy,short_preamble,short_slottime,wpa2 
+		nwid WLAN-8C3ZRD chan 1 bssid 02:00:00:00:00:12 50% HT-MCS23 privacy,short_preamble,short_slottime,radio_measurement,wpa2 
+		nwid Vodafone-4693 chan 12 bssid 02:00:00:00:00:13 43% 450M HT privacy,short_preamble,short_slottime,radio_measurement,wpa2 
+		nwid "Fancy Bear" chan 116 bssid 02:00:00:00:00:14 40% HT-MCS15 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid MagentaWLAN-VMVU chan 11 bssid 02:00:00:00:00:15 35% HT-MCS15 privacy,spectrum_mgmt,short_slottime,radio_measurement,wpa3,wpa2 
+		nwid Turmgate chan 11 bssid 02:00:00:00:00:16 35% HT-MCS15 privacy,spectrum_mgmt,short_slottime,radio_measurement,wpa2 
+		nwid Vodafone-5474 chan 104 bssid 02:00:00:00:00:17 31% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid "FRITZ!Box 7530 SO" chan 116 bssid 02:00:00:00:00:18 31% HT-MCS23 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid Vodafone-4693 chan 140 bssid 02:00:00:00:00:19 31% 600M HT privacy,short_preamble,radio_measurement,wpa2 
+		nwid Turmgate chan 36 bssid 02:00:00:00:00:1a 31% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid MagentaWLAN-VMVU chan 36 bssid 02:00:00:00:00:1b 31% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa3,wpa2 
+		nwid "FRITZ!Box 6660 Cable IX" chan 36 bssid 02:00:00:00:00:1c 31% HT-MCS15 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid "" chan 36 bssid 02:00:00:00:00:1d 31% HT-MCS31 privacy,spectrum_mgmt,radio_measurement,wpa2 
+		nwid "FRITZ!Box L&H Gastzugang" chan 116 bssid 02:00:00:00:00:1e 31% HT-MCS23 privacy,spectrum_mgmt,radio_measurement,wpa2 
+	inet 192.168.0.209 netmask 0xffffff00 broadcast 192.168.0.255

@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
 CONF = "/etc/wpa_supplicant.conf"
+SIGNAL_UNIT = "dBm"
 GLOBAL_OPTS = """ctrl_interface=/var/run/wpa_supplicant
 update_config=1
 eapol_version=2
