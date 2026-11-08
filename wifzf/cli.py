@@ -1,4 +1,4 @@
-"""wifzf: fzf-driven WiFi manager for FreeBSD."""
+"""wifzf: fzf-driven WiFi manager for FreeBSD and OpenBSD."""
 import getpass
 import os
 import shlex
@@ -6,7 +6,13 @@ import shutil
 import sys
 from typing import List
 
-from . import setup, ui, wifi
+from . import setup, ui
+
+ON_OPENBSD = sys.platform.startswith("openbsd")
+if ON_OPENBSD:
+    from . import openbsd as wifi
+else:
+    from . import wifi
 
 PKG_PARENT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -55,7 +61,7 @@ def network_lines(iface: str) -> List[str]:
     lines = []
     for ap in wifi.scan(iface):
         tag = "saved" if ap.ssid in saved else ""
-        label = f"{ap.name:<32.32} {ap.signal:>4} dBm  {ap.band:<5} {ap.security:<6} {tag}"
+        label = f"{ap.name:<32.32} {ap.signal:>4} {wifi.SIGNAL_UNIT:<3}  {ap.band:<5} {ap.security:<6} {tag}"
         lines.append(f"{label}\t{ap.ssid.hex()}\t{ap.security}")
     return lines
 
@@ -81,7 +87,7 @@ def action_connect(iface: str) -> None:
     saved = {s.ssid: s for s in wifi.saved_networks(iface)}
     if ssid in saved:
         return activate(iface, saved[ssid].id, name)
-    if security in ("802.1X", "WEP"):
+    if security in ("802.1X", "WEP") or (ON_OPENBSD and security == "WPA3"):  # OpenBSD has no SAE
         ui.error(f"{security} networks are not supported.")
         return ui.pause()
     password = None
@@ -166,7 +172,7 @@ def main() -> int:
 
     ui.require_fzf()
     iface = wifi.find_interface()
-    if iface is None or not os.path.exists(wifi.CONF):
+    if iface is None or not os.path.exists(wifi.CONF.format(iface)):
         ui.info("WiFi is not set up yet. Let's do that first.")
         iface = setup.run_setup()
         if iface is None:

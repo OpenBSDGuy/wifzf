@@ -1,8 +1,9 @@
 """First-time WiFi setup: wlan0, wpa_supplicant.conf and rc.conf."""
 import os
+import sys
 from typing import Optional
 
-from . import ui, wifi
+from . import openbsd, ui, wifi
 
 
 def run_setup() -> Optional[str]:
@@ -55,3 +56,33 @@ def run_setup() -> Optional[str]:
         return None
     ui.info(f"{iface} is ready.")
     return iface
+
+
+def run_setup_openbsd() -> Optional[str]:
+    devices = openbsd.wlan_devices()
+    if not devices:
+        ui.error("No wireless device found (ifconfig wlan lists none).")
+        ui.info("The firmware may be missing. Run `fw_update`, then reboot or replug the device.")
+        return None
+
+    dev = devices[0] if len(devices) == 1 else ui.pick(devices, "Pick your wireless device", "device> ")
+    if not dev:
+        return None
+
+    path = openbsd.CONF.format(dev)
+    if not os.path.exists(path):
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o640)
+        with os.fdopen(fd, "w") as f:
+            os.fchmod(f.fileno(), 0o640)  # the umask may have stripped bits
+            f.write("inet autoconf\n")
+        ui.info(f"Created {path}")
+
+    if not openbsd.start_supplicant(dev):
+        ui.error(f"Could not bring {dev} up.")
+        return None
+    ui.info(f"{dev} is ready.")
+    return dev
+
+
+if sys.platform.startswith("openbsd"):
+    run_setup = run_setup_openbsd
