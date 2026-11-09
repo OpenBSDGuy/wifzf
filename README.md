@@ -40,7 +40,7 @@ $ wifzf
 ### From source
 
 ```
-$ git clone https://github.com/kasramp/wifzf
+$ git clone https://github.com/OpenBSDGuy/wifzf
 $ cd wifzf
 $ python -m venv venv && source venv/bin/activate
 $ pip install -r requirements.txt
